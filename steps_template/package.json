@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluetooth-serial-port": "^3.0.2",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
@@ -17,6 +18,7 @@
     "mysql2": "^3.9.1",
     "react-youtube": "^10.1.0",
     "sass": "^1.71.1",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "socket.io": "^4.7.4"
   }
 }
