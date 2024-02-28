@@ -45,6 +45,9 @@ const BlogData = [
 ];
 
 const Starter = () => {
+
+  let user = JSON.parse(sessionStorage.getItem('user') || null);
+
   return (
     <div>
       {/***Top Cards***/}
@@ -68,13 +71,13 @@ const Starter = () => {
       <Row>
         {BlogData.map((blg, index) => (
           <Col sm="6" lg="6" xl="3" key={index}>
-            <Blog
+            {/* <Blog
               image={blg.image}
               title={blg.title}
               subtitle={blg.subtitle}
               text={blg.description}
               color={blg.btnbg}
-            />
+            /> */}
           </Col>
         ))}
       </Row>

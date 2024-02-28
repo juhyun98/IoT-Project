@@ -9,6 +9,7 @@ import MyPage from "./MyPage";
 import MemberList from "./MemberList";
 import Delete from "./Delete";
 import Sidebar from "./Sidebar";
+import Survey from "./Survey";
 
 const Body = () => {
   return (

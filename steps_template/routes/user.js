@@ -171,6 +171,65 @@ router.post('/result', (req,res)=>{
 });
 
 
+// gyro_rf 라우터
+router.post('/survey', async (req, res) => {
+  try {
+    const { id } = req.body;
+    console.log(id);
+
+    const gyro_rf_Info = 'SELECT grf_idx, user_id, created_at, gyro_x, gyro_y, gyro_z, acc_x, acc_y, acc_z FROM gyro_rf WHERE user_id = ? AND grf_idx % 10 = 1';
+    const gyro_lf_Info = 'SELECT glf_idx, user_id, created_at, gyro_x, gyro_y, gyro_z, acc_x, acc_y, acc_z FROM gyro_lf WHERE user_id = ? AND glf_idx % 10 = 1';
+
+    const gyroRfData = await queryDatabase(gyro_rf_Info, [id]);
+    const gyroLfData = await queryDatabase(gyro_lf_Info, [id]);
+
+    if (gyroRfData.length > 0 && gyroLfData.length > 0) {
+      console.log('gyro_rf 및 gyro_lf 정보 확인 완료');
+      res.json({ gyroLfData, gyroRfData });
+    } else {
+      console.log('gyro_rf 또는 gyro_lf 정보 확인 실패');
+      res.json({ result: 'fail' });
+    }
+  } catch (error) {
+    console.error('에러 발생:', error);
+    res.status(500).json({ result: 'error' });
+  }
+});
+
+function queryDatabase(sql, params) {
+  return new Promise((resolve, reject) => {
+    conn.query(sql, params, (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
+    });
+  });
+}
+
+
+// gyro_lf 라우터
+// router.post('/survey', (req,res)=> {
+
+//   const {id} = req.body;
+//     console.log(id);
+
+//     const gyro_lf_Info = 'select glf_idx, user_id, created_at, gyro_x, gyro_y, gyro_z, acc_x, acc_y, acc_z from gyro_lf where user_id = ? and glf_idx % 10 = 1';
+//     conn.query(gyro_lf_Info, [id], (err, rows)=> {
+
+//         if(rows && rows.length > 0){
+//             console.log('gyro_lf 정보 확인 완료');
+//             res.json({result:'success', gyroLfData: rows});
+//             console.log(rows);
+//         }else{
+//             console.log('gyro_lf 정보 확인 실패');
+//             res.json({result:'fail'});
+//         }
+//     })
+// })
+
+
 // 회원 검색 라우터
 router.post('/select', (req,res)=>{
    // DB연동코드 추가

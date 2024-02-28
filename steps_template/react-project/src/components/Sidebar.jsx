@@ -14,7 +14,7 @@ const navigation = [
   },
   {
     title: "Survey",
-    href: "/starter",
+    href: "/survey",
     icon: "bi bi-patch-check",
   },
   // {

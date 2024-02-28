@@ -73,11 +73,15 @@ const WalkingChart = () => {
   };
   const series = [
     {
-      name: "2020",
+      name: "X축각도",
       data: [20, 40, 50, 30, 40, 50, 30, 30, 40],
     },
     {
-      name: "2022",
+      name: "Y축각도",
+      data: [10, 20, 40, 60, 20, 40, 50, 60, 20],
+    },
+    {
+      name: "Z축각도",
       data: [10, 20, 40, 60, 20, 40, 50, 60, 20],
     },
   ];
@@ -93,15 +97,15 @@ const WalkingChart = () => {
           <Row>
             <Col md="4">
               <h6>Total Sales</h6>
-              <h4 className="mb-0 fw-bold">100</h4>
+              <h4 className="mb-0 fw-bold">144</h4>
             </Col>
             <Col md="4">
               <h6>This Month</h6>
-              <h4 className="mb-0 fw-bold">$7,545</h4>
+              <h4 className="mb-0 fw-bold">133</h4>
             </Col>
             <Col md="4">
               <h6>This Week</h6>
-              <h4 className="mb-0 fw-bold">$1,345</h4>
+              <h4 className="mb-0 fw-bold">123</h4>
             </Col>
           </Row>
         </div>
