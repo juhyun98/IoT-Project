@@ -7,16 +7,44 @@ const WalkingChart = () => {
 
   let user = JSON.parse(sessionStorage.getItem('user') || null);
 
-  const [members, setMembers] = useState([]);
+  const [rf_members, setRfMembers] = useState([]);
+    const [lf_members, setLfMembers] = useState([]);
+  
+    useEffect(() => {
+      axios
+        .post('/user/survey', { id: user.id })
+        .then((res) => {
 
-  /* 회원 검색을 요청하는 useEffect 구현 */
-  useEffect(() => {
-    axios
-        .post('/user/result', {id:user.id})
-        .then((res)=>{
-          setMembers(res.data.walkingData);
+          const data = res.data
+          // const gyroRfData = res.data.gyroRfData;
+          // const gyroLfData = res.data.gyroLfData;
+          
+          // if (Array.isArray(gyroRfData)) {
+          //   const rfDataSlice = gyroRfData.slice(0, 5);
+          //   setRfMembers(rfDataSlice);
+          // } else {
+          //   console.error('gyroRfData is not an array:', gyroRfData);
+          // }
+
+          // if (Array.isArray(gyroLfData)) {
+          //   const lfDataSlice = gyroLfData.slice(0, 5);
+          //   setLfMembers(lfDataSlice);
+          // } else {
+          //   console.error('gyroLfData is not an array:', gyroLfData);
+          // }
+
+          console.log(res.data);
+
+          const gyroRfData = res.data.gyroRfData;
+          const gyroLfData = res.data.gyroLfData;
+          setRfMembers(gyroRfData);
+          setLfMembers(gyroLfData);
+  
+        })
+        .catch((error) => {
+          console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
         });
-  }, []);
+    }, []);
 
   const options = {
     chart: {
@@ -43,7 +71,7 @@ const WalkingChart = () => {
         borderRadius: 2,
       },
     },
-    colors: ["#0d6efd", "#009efb", "#6771dc"],
+    colors: ["#ff0000", "#004bfb", "#fbee00", "#15fb00", "#fb00e2"],
     xaxis: {
       categories: [
         "Jan",
@@ -71,20 +99,26 @@ const WalkingChart = () => {
       },
     ],
   };
-  const series = [
-    {
-      name: "X축각도",
-      data: [20, 40, 50, 30, 40, 50, 30, 30, 40],
-    },
-    {
-      name: "Y축각도",
-      data: [10, 20, 40, 60, 20, 40, 50, 60, 20],
-    },
-    {
-      name: "Z축각도",
-      data: [10, 20, 40, 60, 20, 40, 50, 60, 20],
-    },
-  ];
+
+  const selectedIndices = Array.from({ length: 20 }, (_, i) => i * 10 + 1);
+
+// gyro 및 acc 값들을 추출
+const lfGyroValues = lf_members.filter((_, index) => selectedIndices.includes(index + 1)).map((member) => ({
+  gyro_x: member.gyro_x,
+  gyro_y: member.gyro_y,
+  gyro_z: member.gyro_z,
+  acc_x: member.acc_x,
+  acc_y: member.acc_y,
+  // acc_z: member.acc_z,
+}));
+
+// series를 생성
+const series = lfGyroValues.length > 0
+  ? Object.keys(lfGyroValues[0]).map((key) => ({
+      name: key,
+      data: lfGyroValues.map((value) => value[key]),
+    }))
+  : [];
 
   return (
     <Card>
