@@ -8,4 +8,4 @@
 
 ##### PPT 및 발표자료:
 
-* ppt: <https://www.miricanvas.com/v/12xqhut >
+* ppt: <https://www.miricanvas.com/v/12xqhut>
