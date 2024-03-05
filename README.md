@@ -8,4 +8,4 @@
 
 ##### PPT 및 발표자료:
 
-* ppt: <https://m.health.chosun.com/svc/news_view.html?contid=2022090801786%27]>
+* ppt: <https://www.miricanvas.com/v/12xqhut >
