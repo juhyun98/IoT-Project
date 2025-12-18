@@ -17,7 +17,7 @@
 
 * ppt: <https://www.miricanvas.com/v/12xqhut>
 * 시연영상: <https://youtu.be/IHZ-k-eXL4A>
-* ER-다이어그램: <https://velog.io/@rei/IoT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-ERD>
+* ER-다이어그램: [<https://velog.io/@rei/IoT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-ERD>](https://velog.io/@nbc98/IoT-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-ERD)
 
 <br>
 
