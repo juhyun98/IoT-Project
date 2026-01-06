@@ -31,8 +31,9 @@
 
 ## 사용 기술 및 라이브러리
 
-- React, NodeJS, Arduino
-- MPU6050 TOKEN, JS, HTML, CSS, AXIOS, Bluetooth, Socket.io
+- 웹 개발 : React, NodeJS(Express Framework), HTML/CSS/JS
+- 센서 데이터 수집 및 처리 : Arduino, MPU6050, BluetoothSerial, Socket.io
+- DB : MySQL
 
 <br>
 
