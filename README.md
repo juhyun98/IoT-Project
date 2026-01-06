@@ -43,6 +43,7 @@
 <img width="868" alt="image" src="https://github.com/juhyun98/IoT-Project/assets/140494238/e4c17c01-3cf4-4791-ba8a-64956df8cd0b">
 
 <br>
+
 ## 개발내용
 - DB 구축 및 테이블 설정
 - MySQL을 사용하여 총 6개의 테이블을 구성
@@ -57,6 +58,7 @@
 - HTML, CSS, JavaScript를 활용한 페이지 구현
 
 <br>
+
 ## 개선사항(느낀점)
 #### 압력센서를 더 활용하자
 압력센서가 값이 한 발에 16개의 값을 받고 양발이라 총 32개의 값을 받아오는데 이 값을 다양하게 활용하지 못한것 같다.
