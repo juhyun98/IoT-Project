@@ -19,7 +19,15 @@
 * 시연영상: <https://youtu.be/IHZ-k-eXL4A>
 * ER-다이어그램: <https://velog.io/@nbc98/IoT-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-ERD>
 
-<br>
+<br><br>
+
+## 상세내용
+<img width="1772" height="1124" alt="image" src="https://github.com/user-attachments/assets/56ba99b8-9402-4bbb-869b-aff39da5bb04" />
+<img width="1772" height="1124" alt="image" src="https://github.com/user-attachments/assets/5f939d19-8f4d-48a4-8518-9064667c19c6" />
+<img width="704" height="406" alt="image" src="https://github.com/user-attachments/assets/7009b6fe-d4cd-417c-87ce-021968cc336f" />
+
+
+
 
 ## 사용 기술 및 라이브러리
 
