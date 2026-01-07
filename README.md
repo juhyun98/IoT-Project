@@ -31,7 +31,7 @@
 
 ## 사용 기술 및 라이브러리
 
-- 웹 개발 : React, NodeJS(Express Framework), HTML/CSS/JS
+- 웹 개발 : React, NodeJS(Express Framework), Axios, HTML/CSS/JS
 - 센서 데이터 수집 및 처리 : Arduino, MPU6050, BluetoothSerial, Socket.io
 - DB : MySQL
 
